@@ -92,9 +92,19 @@ function trigger_buttons_display(element)
 
     text.innerHTML += "<br>" + game(userChoice, computerChoice)
 
-    // adjust header
+    // adjust headers
     round_header = document.getElementById(round + 'h');
     round_header.innerHTML += ": " + player_score + " - " + computer_score;
+    round_header.classList.remove('active');
+    
+    if (round_tracker < 5)
+    {
+        next_round = 'r' + (round_tracker + 1).toString();
+        next_round_header = document.getElementById(next_round + 'h');
+        next_round_header.classList.remove('disabled');
+        next_round_header.classList.add('active');
+    }
+    
 
     round_tracker += 1;
 
