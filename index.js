@@ -84,7 +84,7 @@ function trigger_buttons_display(element)
         round_toggles[0].remove();
     }
 
-    text = document.getElementById("text");
+    text = document.getElementById(round + "text");
 
     text.innerHTML = "You have selected " + userChoice.toUpperCase();
 
@@ -99,32 +99,47 @@ function trigger_buttons_display(element)
     round_tracker += 1;
 
     // display next round
-    display_next_round()
+    
+
+    if (round_tracker > 5)
+    {
+        game_end();
+    }
+    else
+    {
+        display_next_round();
+    }
 }
 
 function display_next_round()
 {
-    round_unhides_a = document.getElementsByClassName('r' + round_tracker);
-    round_unhides_b = document.getElementsByClassName('r' + round_tracker + 'h');
-    round_unhides_c = document.getElementsByClassName('r' + round_tracker + 'c');
-
-    for (let i = 0; i < round_unhides_a.length; i++)
-    {
-        round_unhides_a[i].classList.remove("collapse");
-    }
-    for (let j = 0; i < round_unhides_b.length; i++)
-    {
-        round_unhides_b[i].classList.remove("collapse");
-    }
-    for (let k = 0; i < round_unhides_c.length; i++)
-    {
-        round_unhides_c[i].classList.remove("collapse");
-    }
+    document.getElementById(round_tracker).classList.remove('collapse');
+    document.getElementById(round_tracker).scrollIntoView();
 }
 
-// const playerSelection = "Rock";
-// const computerSelection = getComputerChoice();
-// console.log(playRound(playerSelection, computerSelection));
+function game_end()
+{
+    for (let i = 1; i <= 5; i++)
+    {
+        elim_item = document.getElementById(i);
+        elim_item.remove();
+    }
 
-// console.log(game());
+    document.getElementById('end').classList.remove('collapse');
+    styled_text = document.getElementById('gameendtext');
 
+    if (player_score > computer_score)
+    {
+        styled_text.innerHTML = "You won! Congratulations!";
+        styled_text.classList.add('text-success');
+    }
+    else if (player_score < computer_score)
+    {
+        styled_text.innerHTML = "You lost! You suck...";
+        styled_text.classList.add('text-danger');
+    }
+    else
+    {
+        styled_text.innerHTML = "Tie game.";
+    }
+}

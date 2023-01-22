@@ -19,203 +19,222 @@
     <script src="index.js"></script>
 </head>
 
-<body>
+<body class="bg-dark container-fluid">
 
-    <main class="d-flex flex-nowrap">
-        <div class="d-flex flex-column flex-shrink-0 p-3 text-bg-dark" style="width: 280px;">
-            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
-                <svg class="bi pe-none me-2" width="40" height="32">
-                    <use xlink:href="#bootstrap"></use>
-                </svg>
-                <span class="fs-4">GAME RESULTS</span>
-            </a>
-            <hr>
-            <ul class="nav nav-pills flex-column mb-auto">
-                <li class="nav-item">
-                    <a id="r1h" href="#" class="nav-link active" aria-current="page">
-                        <svg class="bi pe-none me-2" width="16" height="16">
-                            <use xlink:href="#home"></use>
-                        </svg>
-                        Round 1
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link disabled">
-                        <svg class="bi pe-none me-2" width="16" height="16">
-                            <use xlink:href="#speedometer2"></use>
-                        </svg>
-                        Round 2
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link disabled">
-                        <svg class="bi pe-none me-2" width="16" height="16">
-                            <use xlink:href="#table"></use>
-                        </svg>
-                        Round 3
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link disabled">
-                        <svg class="bi pe-none me-2" width="16" height="16">
-                            <use xlink:href="#grid"></use>
-                        </svg>
-                        Round 4
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="nav-link disabled">
-                        <svg class="bi pe-none me-2" width="16" height="16">
-                            <use xlink:href="#people-circle"></use>
-                        </svg>
-                        Round 5
-                    </a>
-                </li>
-            </ul>
-            <hr>
-        </div>
+    <div class="sticky-top  flex-column p-3 text-bg-dark" style=" width: 280px; height:auto;">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+            <svg class="bi pe-none me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+            <span class="fs-4">GAME RESULTS</span>
+        </a>
+        <hr>
+        <ul class="nav nav-pills flex-column mb-auto">
+            <li class="nav-item">
+                <a id="r1h" href="#" class="nav-link active" aria-current="page">
+                    <svg class="bi pe-none me-2" width="16" height="16">
+                        <use xlink:href="#home"></use>
+                    </svg>
+                    Round 1
+                </a>
+            </li>
+            <li>
+                <a id="r2h" href="#" class="nav-link disabled">
+                    <svg class="bi pe-none me-2" width="16" height="16">
+                        <use xlink:href="#speedometer2"></use>
+                    </svg>
+                    Round 2
+                </a>
+            </li>
+            <li>
+                <a id="r3h" href="#" class="nav-link disabled">
+                    <svg class="bi pe-none me-2" width="16" height="16">
+                        <use xlink:href="#table"></use>
+                    </svg>
+                    Round 3
+                </a>
+            </li>
+            <li>
+                <a id="r4h" href="#" class="nav-link disabled">
+                    <svg class="bi pe-none me-2" width="16" height="16">
+                        <use xlink:href="#grid"></use>
+                    </svg>
+                    Round 4
+                </a>
+            </li>
+            <li>
+                <a id="r5h" href="#" class="nav-link disabled">
+                    <svg class="bi pe-none me-2" width="16" height="16">
+                        <use xlink:href="#people-circle"></use>
+                    </svg>
+                    Round 5
+                </a>
+            </li>
+        </ul>
+        <hr>
+    </div>
 
-        <div class="d-flex flex-column mx-auto my-auto">
-            <!-- ROUND 1 CARD -->
-            <div class="card mx-auto my-3 bg-dark text-primary">
-                <div class="card-header">
-                    <h1 class="text-center">
-                        Round 1!
-                    </h1>
-                </div>
-                <div class="card-body">
-                    <div class="bg-dark text-secondary px-4 py-5 text-center">
-                        <div class="py-5">
-                            <h1 class="display-5 fw-bold text-white">Rock Paper Scissors</h1>
-                            <div class="col-lg-6 mx-auto">
-                                <p id="text" class="fs-5 mb-4">Your first battle against the computer, what weapon will you
-                                    choose?</p>
-                                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r1 btn btn-outline-info btn-lg px-4 fw-bold">Rock</button>
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r1 btn btn-outline-light btn-lg px-4 fw-bold">Paper</button>
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r1 btn btn-outline-warning btn-lg px-4 fw-bold">Scissors</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    <div class="d-flex flex-column">
+        <!-- ROUND 1 CARD -->
+        <div id="1" class="card mx-auto bg-dark text-primary">
+            <div class="card-header">
+                <h1 class="text-center">
+                    Round 1!
+                </h1>
             </div>
-
-            <!-- ROUND 2 CARD -->
-            <div id="2" class="r2c collapse card mx-auto my-3 bg-dark text-primary">
-                <div class="card-header">
-                    <h1 class="text-center">
-                        Round 2!
-                    </h1>
-                </div>
-                <div class="card-body">
-                    <div class="bg-dark text-secondary px-4 py-5 text-center">
-                        <div class="py-5">
-                            <h1 class="display-5 fw-bold text-white">Rock Paper Scissors</h1>
-                            <div class="col-lg-6 mx-auto">
-                                <p id="text" class="fs-5 mb-4">Your second battle against the computer, what weapon will you
-                                    choose?</p>
-                                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r2 btn btn-outline-info btn-lg px-4 fw-bold">Rock</button>
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r2 btn btn-outline-light btn-lg px-4 fw-bold">Paper</button>
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r2 btn btn-outline-warning btn-lg px-4 fw-bold">Scissors</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ROUND 3 CARD -->
-            <div class="r3c collapse card mx-auto my-3 bg-dark text-primary">
-                <div class="card-header">
-                    <h1 class="text-center">
-                        Round 3!
-                    </h1>
-                </div>
-                <div class="card-body">
-                    <div class="bg-dark text-secondary px-4 py-5 text-center">
-                        <div class="py-5">
-                            <h1 class="display-5 fw-bold text-white">Rock Paper Scissors</h1>
-                            <div class="col-lg-6 mx-auto">
-                                <p id="text" class="fs-5 mb-4">Your first battle against the computer, what weapon will you
-                                    choose?</p>
-                                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r3 btn btn-outline-info btn-lg px-4 fw-bold">Rock</button>
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r3 btn btn-outline-light btn-lg px-4 fw-bold">Paper</button>
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r3 btn btn-outline-warning btn-lg px-4 fw-bold">Scissors</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ROUND 4 CARD -->
-            <div class="r4c collapse card mx-auto my-3 bg-dark text-primary">
-                <div class="card-header">
-                    <h1 class="text-center">
-                        Round 4!
-                    </h1>
-                </div>
-                <div class="card-body">
-                    <div class="bg-dark text-secondary px-4 py-5 text-center">
-                        <div class="py-5">
-                            <h1 class="display-5 fw-bold text-white">Rock Paper Scissors</h1>
-                            <div class="col-lg-6 mx-auto">
-                                <p id="text" class="fs-5 mb-4">Your first battle against the computer, what weapon will you
-                                    choose?</p>
-                                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r1 btn btn-outline-info btn-lg px-4 fw-bold">Rock</button>
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r1 btn btn-outline-light btn-lg px-4 fw-bold">Paper</button>
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r1 btn btn-outline-warning btn-lg px-4 fw-bold">Scissors</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ROUND 5 CARD -->
-            <div class="r5c collapse card mx-auto my-3 bg-dark text-primary">
-                <div class="card-header">
-                    <h1 class="text-center">
-                        Round 5!
-                    </h1>
-                </div>
-                <div class="card-body">
-                    <div class="bg-dark text-secondary px-4 py-5 text-center">
-                        <div class="py-5">
-                            <h1 class="display-5 fw-bold text-white">Rock Paper Scissors</h1>
-                            <div class="col-lg-6 mx-auto">
-                                <p id="text" class="fs-5 mb-4">Your first battle against the computer, what weapon will you
-                                    choose?</p>
-                                <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r1 btn btn-outline-info btn-lg px-4 fw-bold">Rock</button>
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r1 btn btn-outline-light btn-lg px-4 fw-bold">Paper</button>
-                                    <button onclick='trigger_buttons_display(this)' type="button"
-                                        class="r1 btn btn-outline-warning btn-lg px-4 fw-bold">Scissors</button>
-                                </div>
+            <div class="card-body">
+                <div class="bg-dark text-secondary px-4 py-5 text-center">
+                    <div class="py-5">
+                        <h1 class="display-5 fw-bold text-white">Rock Paper Scissors</h1>
+                        <div class="col-lg-6 mx-auto">
+                            <p id="r1text" class="fs-5 mb-4">Your first battle against the computer, what weapon will you
+                                choose?</p>
+                            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r1 btn btn-outline-info btn-lg px-4 fw-bold">Rock</button>
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r1 btn btn-outline-light btn-lg px-4 fw-bold">Paper</button>
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r1 btn btn-outline-warning btn-lg px-4 fw-bold">Scissors</button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
-    </main>
+
+        <!-- ROUND 2 CARD -->
+        <div id="2" class="r2c collapse card mx-auto my-3 bg-dark text-primary">
+            <div class="card-header">
+                <h1 class="text-center">
+                    Round 2!
+                </h1>
+            </div>
+            <div class="card-body">
+                <div class="bg-dark text-secondary px-4 py-5 text-center">
+                    <div class="py-5">
+                        <h1 class="display-5 fw-bold text-white">Rock Paper Scissors</h1>
+                        <div class="col-lg-6 mx-auto">
+                            <p id="r2text" class="fs-5 mb-4">Your second battle against the computer, what weapon will you
+                                choose?</p>
+                            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r2 btn btn-outline-info btn-lg px-4 fw-bold">Rock</button>
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r2 btn btn-outline-light btn-lg px-4 fw-bold">Paper</button>
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r2 btn btn-outline-warning btn-lg px-4 fw-bold">Scissors</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROUND 3 CARD -->
+        <div id="3" class="r3c collapse card mx-auto my-3 bg-dark text-primary">
+            <div class="card-header">
+                <h1 class="text-center">
+                    Round 3!
+                </h1>
+            </div>
+            <div class="card-body">
+                <div class="bg-dark text-secondary px-4 py-5 text-center">
+                    <div class="py-5">
+                        <h1 class="display-5 fw-bold text-white">Rock Paper Scissors</h1>
+                        <div class="col-lg-6 mx-auto">
+                            <p id="r3text" class="fs-5 mb-4">Your third battle against the computer, what weapon will you
+                                choose?</p>
+                            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r3 btn btn-outline-info btn-lg px-4 fw-bold">Rock</button>
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r3 btn btn-outline-light btn-lg px-4 fw-bold">Paper</button>
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r3 btn btn-outline-warning btn-lg px-4 fw-bold">Scissors</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROUND 4 CARD -->
+        <div id="4" class="r4c collapse card mx-auto my-3 bg-dark text-primary">
+            <div class="card-header">
+                <h1 class="text-center">
+                    Round 4!
+                </h1>
+            </div>
+            <div class="card-body">
+                <div class="bg-dark text-secondary px-4 py-5 text-center">
+                    <div class="py-5">
+                        <h1 class="display-5 fw-bold text-white">Rock Paper Scissors</h1>
+                        <div class="col-lg-6 mx-auto">
+                            <p id="r4text" class="fs-5 mb-4">Your fourth battle against the computer, what weapon will you
+                                choose?</p>
+                            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r4 btn btn-outline-info btn-lg px-4 fw-bold">Rock</button>
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r4 btn btn-outline-light btn-lg px-4 fw-bold">Paper</button>
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r4 btn btn-outline-warning btn-lg px-4 fw-bold">Scissors</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROUND 5 CARD -->
+        <div id="5" class="r5c collapse card mx-auto my-3 bg-dark text-primary">
+            <div class="card-header">
+                <h1 class="text-center">
+                    Round 5!
+                </h1>
+            </div>
+            <div class="card-body">
+                <div class="bg-dark text-secondary px-4 py-5 text-center">
+                    <div class="py-5">
+                        <h1 class="display-5 fw-bold text-white">Rock Paper Scissors</h1>
+                        <div class="col-lg-6 mx-auto">
+                            <p id="r5text" class="fs-5 mb-4">Your final battle against the computer, what weapon will you
+                                choose?</p>
+                            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r5 btn btn-outline-info btn-lg px-4 fw-bold">Rock</button>
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r5 btn btn-outline-light btn-lg px-4 fw-bold">Paper</button>
+                                <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r5 btn btn-outline-warning btn-lg px-4 fw-bold">Scissors</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="end" class="collapse card mx-auto my-3 bg-dark text-primary">
+            <div class="card-header">
+                <h1 class="text-center">
+                    GAME OVER!
+                </h1>
+            </div>
+            <div class="card-body">
+                <div class="bg-dark text-secondary px-4 py-5 text-center">
+                    <div class="py-5">
+                        <div class="col-lg-6 mx-auto">
+                            <p id="gameendtext" class="fs-5 mb-4"></p>
+                            <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                                <!-- <button onclick='trigger_buttons_display(this)' type="button"
+                                    class="r5 btn btn-outline-info btn-lg px-4 fw-bold">Restart?</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
 </body>
